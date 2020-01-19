@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <h1 class="display-4">Bem-vindo ao Blogapp!</h1>
+  <p class="lead">Um projeto de Gabriel Siqueira, que após inicio de suas férias(dezembro de 2019) foi estudar.
+  </p>
+  <hr class="my-4">
+  <p>Essa aplicação foi meu primeiro sistema decente em NodeJs, com função de me apresentar essa tecnologia!</p>
+  <a class="btn btn-primary btn-lg" href="/users/registro" role="button">Crie uma conta</a>
+</div>
+
+<hr>
+
+<h2>Postagens Recentes</h2>
+<br>
+{{#each posts}}
+    <div class="card mt-2">
+        <div class="card-body">
+            <h3 class="card-title">{{titulo}}</h3>
+            <h6 class="card-subtitle mb-2 text-muted">Categoria: {{categoria.nome}}</h6>
+            <p class="card-text mt-3">{{descricao}}</p>
+            <a href="/post/{{slug}}"class="btn btn-primary">Leia mais</a>
+            <hr>
+            <small>{{#formatDate date }}{{/formatDate}}</small>
+        </div>
+    </div>
+{{else}}
+    <p>Nenhum post registrado!</p>
+{{/each}}

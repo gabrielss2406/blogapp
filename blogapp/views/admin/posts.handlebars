@@ -1,0 +1,20 @@
+<h2>Lista de Posts: </h2>
+<hr>
+<a href="/admin/posts/add"><button class="btn btn-success mb-4">Nova postagem</button></a>
+{{#each posts}}
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{titulo}}</h4>
+            <h5 class="card-subtitle mb-2 text-muted">{{categoria.nome}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted mt-2">{{descricao}}<br>{{#formatDate date }}{{/formatDate}}</h6>
+            <p class="card-text mt-3">{{conteudo}}</p>
+            <a href="/admin/posts/edit/{{_id}}"><button class="btn btn-primary mt-2">Editar post</button></a><br>
+            <form action="/admin/posts/deletar"method="post">
+                <input type="hidden" name="id"value="{{_id}}">
+                <button class="btn btn-danger mt-2">Deletar post</button>
+            </form>
+        </div>
+    </div>
+{{else}}
+    <p>Nenhum post registrado!</p>
+{{/each}}

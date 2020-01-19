@@ -1,0 +1,9 @@
+npm install --save express
+npm install --save express-handlebars
+npm install body-parser
+npm install --save mongoose (mongod inicia o server mongo)
+npm install --save moment
+
+npm install --save express-session
+npm install --save connect-flash
+npm install passport-local
